@@ -1,0 +1,6 @@
+[core]
+	editor = \"C:\\Users\\hjun1\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\code\" --wait
+	autocrlf = true
+[user]
+	name = jhoso105106
+	email = hjun105106@hotmail.co.jp
