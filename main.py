@@ -35,18 +35,3 @@ if uploaded_files:
         - ブレイクアウトルームでの作業中にテキストチャットやボイスチャットで質問や交流を行う。
     """)
 
-    if text:
-        for img in images:
-            draw = ImageDraw.Draw(img)
-            # フォントの設定 (デフォルトフォント)
-            font = ImageFont.load_default()
-
-            # テキストの位置を指定 (例: 左上に配置)
-            position = (10, 10)
-
-            # 画像にテキストを描画
-            draw.text(position, text, fill="white", font=font)
-        
-        for img, uploaded_file in zip(images, uploaded_files):
-            st.image(img, caption=f"テキストが追加された画像: {uploaded_file.name}", use_column_width=True)
-
