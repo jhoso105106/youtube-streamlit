@@ -1,36 +1,31 @@
 import streamlit as st
-import time
+from PIL import Image, ImageDraw, ImageFont
 
-st.title('Streamlit 超入門')
-st.write('プログレスバーの表示')
-'Start!!'
+st.title("もくもく会アンケート")
 
-latest_iteration = st.empty()
-bar = st.progress(0)
+# 画像ファイルのアップロード
+uploaded_files = st.file_uploader("画像ファイルをアップロードしてください", type=["png", "jpg", "jpeg"], accept_multiple_files=True)
 
-for i in range(100):
-    latest_iteration.text(f'Iteration {i+1}')
-    bar.progress(i + 1)
-    time.sleep(0.3)  # 進行バーの更新速度を調整
+if uploaded_files:
+    images = [Image.open(uploaded_file) for uploaded_file in uploaded_files]
+    for img, uploaded_file in zip(images, uploaded_files):
+        st.image(img, caption=f"アップロードされた画像: {uploaded_file.name}", use_column_width=True)
+        
+    # テキスト入力
+    text = st.text_input("画像に追加するテキストを入力してください")
 
-left_column, right_column = st.columns(2)
-button = left_column.button('右カラムに文字を表示')
-if button:
-    right_column.write('ここは右カラム')
+    if text:
+        for img in images:
+            draw = ImageDraw.Draw(img)
+            # フォントの設定 (デフォルトフォント)
+            font = ImageFont.load_default()
 
-expander1 = st.expander('問い合わせ1')
-expander1.write('問い合わせ1の回答')
-expander2 = st.expander('問い合わせ2')
-expander2.write('問い合わせ2の回答')
-expander3 = st.expander('問い合わせ3')
-expander3.write('問い合わせ3の回答')
+            # テキストの位置を指定 (例: 左上に配置)
+            position = (10, 10)
 
-# option = st.text_input('あなたの趣味を教えてください')
-# st.write('あなたの好きな趣味：', option)
+            # 画像にテキストを描画
+            draw.text(position, text, fill="white", font=font)
+        
+        for img, uploaded_file in zip(images, uploaded_files):
+            st.image(img, caption=f"テキストが追加された画像: {uploaded_file.name}", use_column_width=True)
 
-# condition = st.slider('あなたの今の調子は', 0, 100, 50)
-# st.write('コンディション：', condition)
-
-# if st.checkbox('Show Image'):
-#     img = Image.open('C:/Users/hjun1/OneDrive/Udemy/th.jpg')
-#     st.image(img, caption='Junko Hosono', use_container_width=True)
