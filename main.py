@@ -48,8 +48,6 @@ st.markdown("""
     - Slack、パドルミーティング、Canvasなどのツールを使用して情報共有や記録を行う。
 """)
 
-
-
 # 画像ファイルのアップロード
 uploaded_files = st.file_uploader("画像ファイルをアップロードしてください", type=["png", "jpg", "jpeg"], accept_multiple_files=True)
 
@@ -66,6 +64,11 @@ st.title("保存された画像")
 if os.listdir(save_dir):
     for file_name in os.listdir(save_dir):
         file_path = os.path.join(save_dir, file_name)
+        img = Image.open(file_path)
+        st.image(img, caption=f"保存された画像: {file_name}", use_column_width=True)
+else:
+    st.write("保存された画像はありません")
+
         img = Image.open(file_path)
         st.image(img, caption=f"保存された画像: {file_name}", use_column_width=True)
 else:
