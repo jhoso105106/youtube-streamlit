@@ -12,8 +12,8 @@ if uploaded_files:
         st.image(img, caption=f"アップロードされた画像: {uploaded_file.name}", use_column_width=True)
         
     # テキスト入力
-    st.title("8.何かアイディア等あれば自由に書いてくださいをCopilotで集計しました")
-    text = st.write("8.何かアイディア等あれば自由に書いてくださいをCopilotで集計しました")
+    #st.title("8.何かアイディア等あれば自由に書いてくださいをCopilotで集計しました")
+    #text = st.write("8.何かアイディア等あれば自由に書いてくださいをCopilotで集計しました")
 
     st.title("アイデアのまとめ")
 
