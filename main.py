@@ -68,7 +68,3 @@ if os.listdir(save_dir):
         st.image(img, caption=f"保存された画像: {file_name}", use_column_width=True)
 else:
     st.write("保存された画像はありません")
-
-        img = Image.open(file_path)
-        st.image(img, caption=f"保存された画像: {file_name}", use_column_width=True)
-else:
