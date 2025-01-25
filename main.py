@@ -12,7 +12,7 @@ if uploaded_files:
         st.image(img, caption=f"アップロードされた画像: {uploaded_file.name}", use_column_width=True)
         
     # テキスト入力
-    text = st.text_input("画像に追加するテキストを入力してください")
+    text = st.text_input("何かアイディア等あれば自由に書いてください")
 
     if text:
         for img in images:
