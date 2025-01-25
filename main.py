@@ -15,7 +15,7 @@ if uploaded_files:
     #st.title("8.何かアイディア等あれば自由に書いてくださいをCopilotで集計しました")
     #text = st.write("8.何かアイディア等あれば自由に書いてくださいをCopilotで集計しました")
 
-    st.title("8.何かアイディア等あれば自由に書いてくださいをCopilotで集計しました")
+    text=st.title("8.何かアイディア等あれば自由に書いてくださいをCopilotで集計しました")
 
     st.markdown("""
     1. **事前アンケートの実施**
