@@ -8,7 +8,7 @@ if not os.path.exists(save_dir):
     os.makedirs(save_dir)
 
 st.title("もくもく会アンケート")
-st.write("保存された画像はありません")
+#st.write("保存された画像はありません")
 text=st.title("8.何かアイディア等あれば自由に書いてくださいをCopilotで集計しました")
 
 st.markdown("""
@@ -49,7 +49,7 @@ st.markdown("""
 """)
 
 # 画像ファイルのアップロード
-uploaded_files = st.file_uploader("画像ファイルをアップロードしてください", type=["png", "jpg", "jpeg"], accept_multiple_files=True)
+uploaded_files = st.file_uploader("", type=["png", "jpg", "jpeg"], accept_multiple_files=True)
 
 if uploaded_files:
     for uploaded_file in uploaded_files:
