@@ -55,7 +55,7 @@ try:
     companies = st.multiselect(
         '会社名を選択してください。',
         list(df.index),
-        ['google', 'amazon', 'facebook', 'apple','microsoft')]
+        ['google', 'amazon', 'facebook', 'apple','microsoft']
     )
 
     if not companies:
