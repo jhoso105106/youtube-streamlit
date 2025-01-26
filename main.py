@@ -9,7 +9,7 @@ if not os.path.exists(save_dir):
 
 st.title("もくもく会アンケート集計結果")
 #st.write("保存された画像はありません")
-st.title("8.何かアイディア等あれば自由に書いてくださいをCopilotで集計しました")
+st.write("8.何かアイディア等あれば自由に書いてくださいをCopilotで集計しました")
 
 # アイデアのまとめを表示
 st.markdown("""
