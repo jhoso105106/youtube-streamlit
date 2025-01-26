@@ -6,7 +6,7 @@ import streamlit as st
 st.title('米国株価可視化アプリ')
 
 st.sidebar.write("""
-# GAFA株価
+# GAFAM株価
 こちらは株価可視化ツールです。以下のオプションから表示日数を指定できます。
 """)
 
@@ -55,7 +55,7 @@ try:
     companies = st.multiselect(
         '会社名を選択してください。',
         list(df.index),
-        ['google', 'amazon', 'facebook', 'apple']
+        ['google', 'amazon', 'facebook', 'apple','microsoft')]
     )
 
     if not companies:
