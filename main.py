@@ -1,6 +1,3 @@
-# コマンドライン例
-git checkout -b master
-git push origin master
 import streamlit as st
 from PIL import Image
 import os
